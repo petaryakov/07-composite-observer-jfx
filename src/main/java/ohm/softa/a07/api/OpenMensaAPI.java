@@ -17,4 +17,6 @@ public interface OpenMensaAPI {
 
 	@GET("canteens/229/days/{date}/meals")
 	Call<List<Meal>> getMeals(@Path("date") String date);
+
+
 }
