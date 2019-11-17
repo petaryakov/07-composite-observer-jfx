@@ -18,15 +18,15 @@
 		<RowConstraints minHeight="10.0" vgrow="NEVER" />
 	</rowConstraints>
 
-	<Button fx:id="btnRefresh" text="Refresh" GridPane.columnIndex="0" GridPane.rowIndex="0">
+	<Button fx:id="btnRefresh" text="Refresh" onAction="#onRefreshItem" GridPane.columnIndex="0" GridPane.rowIndex="0">
       <GridPane.margin>
          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
       </GridPane.margin></Button>
-	<Button fx:id="btnClose" text="Close" GridPane.columnIndex="1" GridPane.rowIndex="0">
+	<Button fx:id="btnClose" onAction="#onCloseItem" text="Close" GridPane.columnIndex="1" GridPane.rowIndex="0">
       <GridPane.margin>
          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
       </GridPane.margin></Button>
-	<CheckBox fx:id="chkVegetarian" text="Vegetarian" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+	<CheckBox fx:id="chkVegetarian" onAction="#onVegetarianChkbox" text="Vegetarian" GridPane.columnIndex="2" GridPane.rowIndex="0" />
 
 	<ListView fx:id="mealsList" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
 
