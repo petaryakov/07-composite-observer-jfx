@@ -2,6 +2,7 @@ package ohm.softa.a07.tests;
 
 import ohm.softa.a07.api.OpenMensaAPI;
 import ohm.softa.a07.model.Meal;
+import ohm.softa.a07.utils.MealsFilterUtility;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import org.apache.logging.log4j.LogManager;
@@ -81,4 +82,13 @@ class OpenMensaAPITests {
 		}
 	}
 
+	@Test
+	void testVegetarianLits() throws IOException {
+		List<Meal> meals = openMensaAPI.getMeals(dateFormat.format(getUpcomingMondayDate())).execute().body();
+
+		List<Meal> result = MealsFilterUtility.filterForVegetarian(meals);
+		assertNotNull(result);
+		assertNotEquals(0, result.size());
+
+	}
 }
